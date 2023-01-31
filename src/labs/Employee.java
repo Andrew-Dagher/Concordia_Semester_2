@@ -97,12 +97,14 @@ public class Employee {
 		System.out.println(emp1.getAnnualSalary()+ " "+emp1.getAnnualSalary());
 		
 		System.out.println(emp2.getName());
-		System.out.println(emp4.toString());
+		System.out.println(emp4.toString(emp4));
 		
 		
 		System.out.println(emp2.equals(emp3));
 		
-		
+		Employee[] bob = {emp1,emp2,emp3,emp4};
+				
+		System.out.println(Employee.LowestTax(bob));
 		
 	}
 	

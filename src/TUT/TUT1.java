@@ -1,5 +1,7 @@
 package TUT;
 
+import java.util.Random;
+
 public class TUT1{
 	
 	public static void main (String[] args) {
@@ -12,6 +14,14 @@ public class TUT1{
 
 	if (S1.equals(S2)) {
 		System.out.println("poop2");
+		
+		
+//		int roll =(int) ((Math.random()*6)+1);
+//		System.out.println(roll);
+		
+		Random random = new Random();
+		System.out.println(random.nextInt(1,7));
+		
 	}
 	
 	}
