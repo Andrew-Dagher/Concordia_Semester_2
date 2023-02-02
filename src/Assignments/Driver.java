@@ -7,7 +7,7 @@ public class Driver {
 		
 		LadderAndSnake ls1 = new LadderAndSnake();
 		ls1.play();
-		System.out.println(ls1.getNumOfPlayers());
+		
 	}
 
 }
