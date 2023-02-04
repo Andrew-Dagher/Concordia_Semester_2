@@ -1,7 +1,7 @@
 
 public class Child extends Parent {
 
-	public static void print(byte i) {
+	public void print(int i) {
 		System.out.println("child");
 	}
 
