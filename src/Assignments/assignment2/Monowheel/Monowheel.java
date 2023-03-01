@@ -5,17 +5,17 @@ import Assignments.assignment2.WheeledTransportation.WheeledTransportation;
 public class Monowheel extends WheeledTransportation {
 	double maxWeight;
 	
-   Monowheel(){
+   public Monowheel(){
 	  super();
-	  this. maxWeight=0;   
+	  this.maxWeight=0;   
    }
-   Monowheel(int wheels,double speed,int weight){
+   public Monowheel(int wheels,double speed,int weight){
 	   this.numWheels=wheels;
 	   this.maxSpeed=speed;
 	   this.maxWeight=weight;
 	   
    }
-   Monowheel(Monowheel w){
+   public Monowheel(Monowheel w){
 	   this.numWheels=w.numWheels;
 	   this.maxSpeed=w.maxSpeed;
 	   this.maxWeight=w.maxWeight;
@@ -27,7 +27,7 @@ public class Monowheel extends WheeledTransportation {
    protected void setmaxWeight(double weight) {
 	   this.maxWeight=weight;
    }
-   public String toSting() {
+   public String toString() {
 		 return "This Monowheel has "+ this.numWheels+" wheels, has a maximum speed of "+this.maxSpeed+" km/hr. It has a maximum weight of "+this.maxWeight;
 	 }
 	 public boolean equals(Monowheel w) {

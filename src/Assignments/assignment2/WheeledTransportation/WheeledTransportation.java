@@ -8,15 +8,15 @@ public class WheeledTransportation extends Parent {
 	protected double maxSpeed;
 	
 	
-	 protected WheeledTransportation() {
+	 public WheeledTransportation() {
 		 this.numWheels=0;
 		 this.maxSpeed=0;
 	}
-	 protected WheeledTransportation(int wheels,double maxspeed){
+	 public WheeledTransportation(int wheels,double maxspeed){
 		 this.numWheels=wheels;
 		 this.maxSpeed=maxspeed;
 	 }
-	 protected WheeledTransportation(WheeledTransportation wt){
+	 public WheeledTransportation(WheeledTransportation wt){
 		 this.numWheels=wt.numWheels;
 		 this.maxSpeed=wt.maxSpeed;
 	 }
@@ -32,7 +32,7 @@ public class WheeledTransportation extends Parent {
 	 protected void setmaxSpeed(double speed) {
 		 this.maxSpeed=speed; 
 	 }
-	 public String toSting() {
+	 public String toString() {
 		 return "This Wheeled Transportation has "+ this.numWheels+" wheels, has a maximum speed of "+this.maxSpeed+" km/hr.";
 	 }
 	 public boolean equals(WheeledTransportation w) {

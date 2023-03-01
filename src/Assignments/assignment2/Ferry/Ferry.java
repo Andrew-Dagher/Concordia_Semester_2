@@ -7,15 +7,15 @@ public class Ferry extends Parent{
 	double maxSpeed;
 	double maxLoad;
    
-	Ferry(){
+	public Ferry(){
 		this.maxLoad=0;
 		this.maxSpeed=0;
 	}
-	Ferry(double speed,double load){
+	public Ferry(double speed,double load){
 		this.maxSpeed=speed;
 		this.maxLoad=load;	
 	}
-	Ferry(Ferry f){
+	public Ferry(Ferry f){
 		this.maxSpeed=f.maxSpeed;
 		this.maxLoad=f.maxLoad;
 	}
@@ -31,7 +31,7 @@ public class Ferry extends Parent{
 	protected void setmaxLoad(double load) {
 		this.maxLoad=load;
 	}
-	public String toSting() {
+	public String toString() {
 		 return "This Ferry has a maximum speed of "+this.maxSpeed+" km/hr and has a maximum load of "+this.maxLoad+" kg";
 	 }
 	 public boolean equals(Ferry f) {

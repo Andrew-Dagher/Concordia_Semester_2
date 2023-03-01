@@ -30,7 +30,7 @@ public class Aircraft extends Parent {
 	protected void setmaxElevation(double elevation) {
 		this.maxElevation=elevation;
 	}
-	public String toSting() {
+	public String toString() {
 		 return "This Aircraft has a price of "+this.price+" $ and has a maximum elevation of "+this.maxElevation+" m";
 	 }
 	 public boolean equals(Aircraft a) {
