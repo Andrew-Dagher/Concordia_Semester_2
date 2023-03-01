@@ -95,7 +95,7 @@ public class Driver2 { //basically need to input array, make a new array of same
 			System.out.println(array1[i]);
 		}
 		System.out.println();
-		for(int i = 0; i<array1.length;i++) {
+		for(int i = 0; i<array2.length;i++) {
 			System.out.println(array2[i]);
 		}
 		
