@@ -16,38 +16,118 @@ public class Driver2 { //basically need to input array, make a new array of same
 		
 		 Parent[] copiedObjects = new Parent[objects.length];// creating an empty array of same size as parameter to then fill it up.
 		
-		 for (int i = 0 ; i<objects.length;i++) {
-			 Parent object = objects[i]; //stores info from object at index i into "object" to be used in the if statements.
-			 
-			 
-			 //checks if object at index i is a WheeledTransportation. it then makes a new WheeledTransportation using downcasting and stores it in the copiying array at index i.
-			 if(object instanceof WheeledTransportation) {
-				 copiedObjects[i]= new WheeledTransportation((WheeledTransportation)object);
-			 }
-			 if(object instanceof Train) {
-				 copiedObjects[i]= new Train((Train)object);
-			 }
-			 if(object instanceof Metro) {
-				 copiedObjects[i]= new Metro((Metro)object);
-			 }
-			 if(object instanceof Tram) {
-				 copiedObjects[i]= new Tram((Tram)object);
-			 }
-			 if(object instanceof Monowheel) {
-				 copiedObjects[i]= new Monowheel((Monowheel)object);
-			 }
-			 if(object instanceof Ferry) {
-				 copiedObjects[i]= new Ferry((Ferry)object);
-			 }
-			 if(object instanceof Aircraft) {
-				 copiedObjects[i]= new Aircraft((Aircraft)object);
-			 }
-			 if(object instanceof WWII_Airplane) {
-				 copiedObjects[i]= new WWII_Airplane((WWII_Airplane)object);
-			 } 
-		 }
 		 
-		 return copiedObjects;//returns the copied array.
+		 int index = 0;
+		 int counter = 0;
+		 while(true) {
+			  
+			 try {
+				 Parent object = objects[index];
+				 
+				 if (index + 1 == objects.length) {
+					 return copiedObjects;
+					 //returns the copied array.
+				 }
+				 if(counter == 0) {
+					 copiedObjects[index] = new WheeledTransportation((WheeledTransportation)object);
+					 
+					 if(!object.equals(copiedObjects[index])) {
+						 copiedObjects[index] = null; // if object array does not match the copied one, then make the copied element at index be null.
+						 throw new Exception();
+					 }
+					 index++;
+					 counter=0;
+					 continue;
+				 }
+				 if(counter == 1) {
+					 copiedObjects[index] = new Train((Train)object);
+					 if(!object.equals(copiedObjects[index])) {
+						 copiedObjects[index] = null; // if object array does not match the copied one, then make the copied element at index be null.
+						 throw new Exception();
+					 }
+					 index++;
+					 counter=0;
+					 continue;
+				 }
+				 
+				 if(counter == 2) {
+					 copiedObjects[index] = new Metro((Metro)object);
+					 if(!object.equals(copiedObjects[index])) {
+						 copiedObjects[index] = null; // if object array does not match the copied one, then make the copied element at index be null.
+						 throw new Exception();
+					 }
+					 index++;
+					 counter=0;
+					 continue;
+				 }
+				 
+				 if(counter == 3) {
+					 copiedObjects[index]= new Tram((Tram)object);
+					 if(!object.equals(copiedObjects[index])) {
+						 copiedObjects[index] = null; // if object array does not match the copied one, then make the copied element at index be null.
+						 throw new Exception();
+					 }
+					 index++;
+					 counter=0;
+					 continue;
+				 }
+				 
+				 if(counter == 4) {
+					 copiedObjects[index]= new Monowheel((Monowheel)object);
+					 if(!object.equals(copiedObjects[index])) {
+						 copiedObjects[index] = null; // if object array does not match the copied one, then make the copied element at index be null.
+						 throw new Exception();
+					 }
+					 index++;
+					 counter=0;
+					 continue;
+				 }
+				 
+				 if(counter == 5) {
+					 copiedObjects[index]= new Ferry((Ferry)object);
+					 if(!object.equals(copiedObjects[index])) {
+					 copiedObjects[index] = null; // if object array does not match the copied one, then make the copied element at index be null.
+					 throw new Exception();
+				 }
+				 index++;
+				 counter=0;
+				 continue;
+				 }
+				 
+				 if(counter == 6) {
+					 copiedObjects[index]= new Aircraft((Aircraft)object);
+					 
+					 if(!object.equals(copiedObjects[index])) {
+					 copiedObjects[index] = null; // if object array does not match the copied one, then make the copied element at index be null.
+					 throw new Exception();
+				 }
+				 index++;
+				 counter=0;
+				 continue;
+				 }
+				 
+				 if(counter == 7) {
+					 copiedObjects[index]= new WWII_Airplane((WWII_Airplane)object);
+					 if(!object.equals(copiedObjects[index])) {
+					 copiedObjects[index] = null; // if object array does not match the copied one, then make the copied element at index be null.
+					 throw new Exception();
+				 }
+				 index++;
+				 counter=0;
+				 continue;
+				 }		 
+			 }
+			
+			 catch (Exception e) {
+				 System.out.println("error at " + index);
+				 System.out.println(objects[index].getClass());
+				 counter++;
+				 System.out.println(counter);
+				 System.out.println();
+				 continue;
+				 
+			 }
+		 }
 		 
 	 }
 
