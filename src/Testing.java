@@ -1,11 +1,10 @@
 
 public class Testing {
-	public static void main(String[] args) {
-		
-		int[]array= new int[20];
-		
-		array[29] = 4;//run time error but not compile time
-		System.out.printf("%9d |", 4);
+	public static void fun1(Parent a1) {
+		GrandChild c1 = new GrandChild();
+		if(a1.equals(c1)) {
+			System.out.println("goood");
+		}else System.out.println("noooo");
 	}
-
 }
+

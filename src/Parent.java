@@ -1,9 +1,13 @@
 
 public class Parent {
-	public void print(int i) {
-		System.out.println("parent");
+	public Parent() {
+		System.out.println("hello parent");
+		test(); 
+		}
+	public void test() { 
+		
+		
+		System.out.println("01"); 
+		
+		} 
 	}
-
-	
-
-}
