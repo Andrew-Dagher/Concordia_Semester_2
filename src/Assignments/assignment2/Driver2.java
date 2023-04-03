@@ -1,3 +1,11 @@
+// -----------------------------------------------------
+// Assignment 2
+// Part: 2
+// Written by: Kevin Shibu Chacko 40241154, Andrew Harissi Dagher 40247726
+// -----------------------------------------------------
+/**
+ * Driver 2 class to create multiple objects and test if copyTheObjects method works
+ */
 package Assignments.assignment2;
 
 import Assignments.assignment2.Aircraft_WorldWar.Aircraft;
@@ -11,7 +19,16 @@ import Assignments.assignment2.WheeledTransportation.WheeledTransportation;
 
 public class Driver2 { //basically need to input array, make a new array of same size and copy array one into the new array using copy constructor.
 	 
-	
+	/**
+	 * This method takes an array of Parent objects as a parameter and returns a new array of the same size that contains the same elements as the input array
+	 * The method initializes an empty array of the same size as the input array and iterates through each element in the input array, copying it into the new array.
+	 * The method checks the type of each element in the input array and creates a new object of that type in the copied array.
+	 * If an object in the input array cannot be copied, the corresponding element in the copied array is set to null.
+	 * The method returns the copied array.
+	 * @param objects an array of Parent objects to be copied
+	 * @return an array of Parent objects that is a copy of the input array
+	 * @throws error when it does not find the right object type
+	 */
 	 public static Parent[] copyTheObjects(Parent[] objects) {
 		
 		 Parent[] copiedObjects = new Parent[objects.length];// creating an empty array of same size as parameter to then fill it up.
@@ -20,7 +37,9 @@ public class Driver2 { //basically need to input array, make a new array of same
 		 int index = 0;
 		 int counter = 0;
 		 while(true) {
-			  
+			 
+			 
+			 
 			 try {
 				 Parent object = objects[index];
 				 
@@ -115,14 +134,19 @@ public class Driver2 { //basically need to input array, make a new array of same
 				 index++;
 				 counter=0;
 				 continue;
-				 }		 
+				 }	
+				 if(counter == 8) {
+					 return copiedObjects;
+					 
+				 }
 			 }
-			
+			 
+			 
 			 catch (Exception e) {
-				 System.out.println("error at " + index);
+				 System.out.println("error at index: " + index);
 				 System.out.println(objects[index].getClass());
 				 counter++;
-				 System.out.println(counter);
+				 System.out.println("counter is now at: "+counter);
 				 System.out.println();
 				 continue;
 				 
@@ -178,7 +202,7 @@ public class Driver2 { //basically need to input array, make a new array of same
 		for(int i = 0; i<array2.length;i++) {
 			System.out.println(array2[i]);
 		}
-		
+	
 		
 		
 		

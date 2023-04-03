@@ -1,3 +1,11 @@
+/**
+ * Kevin Shibu Chacko 40241154
+ * Andrew Harissi Dagher 40247726
+ * COMP249
+ * Assignment #2
+ *  Due Date: March 3 2023
+ * Driver Class to create multiple objects and test if findLeastAndMostExpensiveAircraft method works
+ */
 package Assignments.assignment2;
 
 import Assignments.assignment2.Aircraft_WorldWar.Aircraft;
@@ -10,7 +18,10 @@ import Assignments.assignment2.Train_Tram.Tram;
 import Assignments.assignment2.WheeledTransportation.WheeledTransportation;
 
 public class Driver1 {
-		
+	/**
+	 * Finds the least and most expensive Aircraft object from an array of Parent objects. 	
+	 * @param objects the array of Parent objects
+	 */
 	public static void findLeastAndMostExpensiveAircraft(Parent[] objects) {
 	    Aircraft leastExpensive = null;
 	    Aircraft mostExpensive = null;
@@ -94,6 +105,8 @@ public class Driver1 {
 		System.out.println(train7.toString());
 		System.out.println(train8.toString());
 		System.out.println(train9.toString());
+		
+		System.out.println();
 		
 		System.out.println(metro.toString());
 		
