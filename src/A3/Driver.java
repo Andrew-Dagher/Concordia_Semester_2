@@ -10,7 +10,19 @@ import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.io.Serializable;
 import java.util.Scanner;
+//-----------------------------------------------------
+//Assignment 3
+//Question: Part 1-2-3
+//Written by: Kevin Shibu Chacko 40241154 & Andrew Harissi Dagher 40247726 
+//
+//-----------------------------------------------------
 
+/**
+ * Driver Class where main method is implemented
+ * @author Kevin Shibu Chacko
+ * @author Andrew Harissi Dagher
+ *
+ */
 
 public class Driver implements Serializable{
 	
@@ -30,15 +42,12 @@ public class Driver implements Serializable{
     static Book[] books_SSM;
     static Book[] books_TPA;
     
-    
-    
-	
-   
-	
-	
-
+ 
 	//will check if initial file opens
-	
+	/**
+	 * Method checks if file can be opened and if not will throw exception.It will then put all good files into an arrahy of good files.
+	 * @param initial_File_Name
+	 */
 	public static void checkFiles(String initial_File_Name){
 		Scanner sc = null;
 		
@@ -65,13 +74,11 @@ public class Driver implements Serializable{
 				try {
 					 sc2 = new Scanner(new FileInputStream(check));
 					fileNames[counter] = check;
-//					System.out.println(fileNames[counter]);
 					counter++;
 					
 										
 				}
 				catch(FileNotFoundException e) {
-//					System.out.println(check + " is non existent");
 					continue;
 				}
 				sc2.close();
@@ -82,7 +89,7 @@ public class Driver implements Serializable{
 		
 		}
 		catch(FileNotFoundException e) {
-//			System.out.println(initial_File_Name + " does not exist");
+
 			
 		}
 		
@@ -111,26 +118,26 @@ public class Driver implements Serializable{
 			index++;
 		}
 		
-//		System.out.println("-----------------");
-//		System.out.println("existing files:");
-//		for(String files :new_fileNames) {
-//			System.out.println(files);
-//		
-//		}
+
 		sc.close();
 		
-	}			
+	}	
+	/**
+	 * method splits elements in file according to the number of commas,if there is comm in between quotes,it will disregard it.
+	 * @param input
+	 * @return parts
+	 */
 	public static String[] splitString(String input) {
 		String[] parts = input.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)",6);
 
 		
-//		for( String part : parts) {
-//			System.out.println(part);
-//		}
-//		System.out.println();
-		
 		return parts;
 	}
+	/**
+	 * method will write good good lines after checking syntax errors into their respective genre files
+	 * @param array
+	 * @param Line
+	 */
 	public static void writeGenreFile(String[] array, String Line) {
 		
 			for(int j = 0 ; j<genres.length;j++){
@@ -156,7 +163,11 @@ public class Driver implements Serializable{
 	
 		
 	}
-	
+	/**
+	 * method will write good book arrays into specific serialized files 
+	 * @param genrearr
+	 * @param file_name
+	 */
 	public static void writeGenreFileBook(Book[] genrearr,String file_name ) {
 		try {
 		
@@ -171,6 +182,11 @@ public class Driver implements Serializable{
 		}
 		
 	}
+	/**
+	 * method will add book into its specific array 
+	 * @param b
+	 * @param genre
+	 */
 	public static void addBook(Book b, String genre) {
 	    
 	    switch (genre) {
@@ -256,7 +272,9 @@ public class Driver implements Serializable{
 	            break;
 	    }
 	}
-
+    /**
+     * part1 method will check for all syntax errors and then move all good lines into their specific genre files 
+     */
 	public static void do_part1() {
 		
 		checkFiles("part1_input_file_names.txt");
@@ -391,7 +409,9 @@ public class Driver implements Serializable{
 	
 	
 	}
-	
+	/**
+	 * part 2 method will check for semantic errors in those specific files then create book objects and put those book objects into specific arrays of the genres
+	 */
 	public static void do_part2(){
 
 		
@@ -520,7 +540,9 @@ public class Driver implements Serializable{
 			
 		
 	}
-	
+	/**
+	 * part 3 method will deserialize all array objects and output menu.Where user can check books in specific file.
+	 */
 	public static String currentFile="";
 	public static int num=0;
 	public static int currentIndex=0;
@@ -532,7 +554,6 @@ public class Driver implements Serializable{
 	    //saving the books in their appropriate array. 
 	    for (int i = 0; i < genreFilesBook.length; i++) {
 	        try {
-	            System.out.println("opening: " + genreFilesBook[i]);
 	            ois = new ObjectInputStream(new FileInputStream(genreFilesBook[i]));
 	            
 	            while (true) {
@@ -544,7 +565,6 @@ public class Driver implements Serializable{
 	        }
 	        
 	        catch (EOFException e) {
-	            System.out.println("Reached the end of: " + genreFilesBook[i] + "\n");
 	            index++;
 	            continue;
 	        } catch (FileNotFoundException e) {
@@ -594,20 +614,24 @@ public class Driver implements Serializable{
         while (!input.equals("x"));
         
     }
+	/**
+	 * When use click s this method starts and displays sub menu where use can change what file they want to see
+	 * @param sc
+	 */
 	public static void selectFile(Scanner sc) {
 		int input = 0;
 		
 		System.out.println("------------------------------");
 		System.out.println("         File Sub-Menu        ");
 		System.out.println("------------------------------");
-		System.out.println("1 Cartoons_Comics_Books.csv.ser      ("+arr3[0].length+" records)");
-		System.out.println("2 Hobbies_Collectibles_Books.csv.ser      ("+arr3[1].length+" records)");
-		System.out.println("3 Movies_TV.csv.ser      ("+arr3[2].length+" records)");
-		System.out.println("4 Music_Radio_Books.csv.ser      ("+arr3[3].length+" records)");
-		System.out.println("5 Nostalgia_Eclectic_Books.csv.ser      ("+arr3[4].length+" records)");
-		System.out.println("6 Old_Time_Radio.csv.ser      ("+arr3[5].length+" records)");
-		System.out.println("7 Sports_Sports_Memorabilia.csv.ser      ("+arr3[6].length+" records)");
-		System.out.println("8 Trains_Planes_Automobiles.csv.ser      ("+arr3[7].length+" records)");
+		System.out.println("1 Cartoons_Comics_Books.csv.ser        ("+arr3[0].length+" records)");
+		System.out.println("2 Hobbies_Collectibles_Books.csv.ser   ("+arr3[1].length+" records)");
+		System.out.println("3 Movies_TV.csv.ser                    ("+arr3[2].length+" records)");
+		System.out.println("4 Music_Radio_Books.csv.ser            ("+arr3[3].length+" records)");
+		System.out.println("5 Nostalgia_Eclectic_Books.csv.ser     ("+arr3[4].length+" records)");
+		System.out.println("6 Old_Time_Radio.csv.ser               ("+arr3[5].length+" records)");
+		System.out.println("7 Sports_Sports_Memorabilia.csv.ser    ("+arr3[6].length+" records)");
+		System.out.println("8 Trains_Planes_Automobiles.csv.ser    ("+arr3[7].length+" records)");
 		System.out.println("9 Exit");
 		System.out.println("------------------------------");
 		System.out.println();
@@ -650,6 +674,9 @@ public class Driver implements Serializable{
 	     else if(input==9);
 	    	 
 	}
+	/**
+	 * When user presses v this method allows them to go through each book object from the file
+	 */
 	public static void openFile() {
 		 Scanner sc= new Scanner(System.in);
 	     int n;
@@ -658,7 +685,7 @@ public class Driver implements Serializable{
 	     System.out.print("Enter a number:");
 	     n=sc.nextInt();
 	     if(n==0) {
-	    	 System.out.println("Returning to Main Menu");
+	    	 System.out.println("\nReturning to Main Menu");
 	    	 k=false;
 	     }
 	     else if (n>0) {
@@ -672,22 +699,26 @@ public class Driver implements Serializable{
 	}
 	public static void displayObjects(int startIndex, int endIndex) {
 		if (startIndex < 0) {
-            System.out.println("BOF has been reached.");
+            System.out.println("\nBOF has been reached.");
             startIndex = 0;
         }
         if (endIndex >= arr3[num].length) {
-            System.out.println("EOF has been reached.");
+            System.out.println("\nEOF has been reached.");
             endIndex = arr3[num].length - 1;
         }
         for (int i = startIndex; i <= endIndex; i++) {
             System.out.println(arr3[num][i]);
+            System.out.println();
         }
         currentIndex = endIndex;
     }
 	
 	
 
-
+    /**]
+     * Main method allows to executes part1,2 and 3 methods.
+     * @param args
+     */
 	public static void main(String[] args) {
 		
 		do_part1();
