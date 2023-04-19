@@ -12,49 +12,42 @@ public class driver {
 	
 
 	public static void main(String[] args) {
-//		Parent p = new Parent();
-//		Child c = new Child();
-//		
-//		p=c;
-//		
-//		System.out.println();
-//		System.out.println(p);
-//		System.out.println(c);
-//		System.out.println(p.getClass()==c.getClass());
-//		System.out.println();
-		
-		
-		
-	
-	PrintWriter pw = null;
-	Scanner Scanner = null; 
-	
-	try {
-		pw = new PrintWriter(new FileOutputStream("Helloooooo"));
-		 Scanner = new Scanner(new FileInputStream("Helloooooo"));
-		
-	}
-	catch(FileNotFoundException e) {
-		e.getStackTrace();
-			System.out.println("error");
-		}
-	catch(IOException e) {
-		System.out.println("error io");
-	}
-	
-	
-	pw.println("ejhfefref\nrrefvrv\nrtgrgtrt\ng4tg4rgt\n4gtrgret\n");
-	pw.close();
-	
 
-	while(Scanner.hasNextLine()) {
-		 
-		System.out.println(Scanner.nextLine());
 		
-	}
+		Big b = new Big();
+		b.print();
+		Big s = new small();
+		s.print();
 	
-	Scanner.close();
-	
-	
+//	PrintWriter pw = null;
+//	Scanner Scanner = null; 
+//	
+//	try {
+//		pw = new PrintWriter(new FileOutputStream("Helloooooo"));
+//		 Scanner = new Scanner(new FileInputStream("Helloooooo"));
+//		
+//	}
+//	catch(FileNotFoundException e) {
+//		e.getStackTrace();
+//			System.out.println("error");
+//		}
+//	catch(IOException e) {
+//		System.out.println("error io");
+//	}
+//	
+//	
+//	pw.println("ejhfefref\nrrefvrv\nrtgrgtrt\ng4tg4rgt\n4gtrgret\n");
+//	pw.close();
+//	
+//
+//	while(Scanner.hasNextLine()) {
+//		 
+//		System.out.println(Scanner.nextLine());
+//		
+//	}
+//	
+//	Scanner.close();
+//	
+//	
 	}
 }
