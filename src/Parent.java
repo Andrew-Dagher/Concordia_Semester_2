@@ -1,7 +1,7 @@
 
 public class Parent {
 	public Parent() {
-		System.out.println("hello parent");
+		test2();
 		test(); 
 		}
 	public void test() { 
@@ -10,4 +10,8 @@ public class Parent {
 		System.out.println("01"); 
 		
 		} 
+
+	public static void test2() {
+		System.out.println("haha");
+		}
 	}

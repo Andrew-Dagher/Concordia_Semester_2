@@ -13,12 +13,25 @@ public class driver {
 
 	public static void main(String[] args) {
 
+		Parent c1 = new GrandChild();
 		
-		Big b = new Big();
-		b.print();
-		Big s = new small();
-		s.print();
-	
+		Child c2 = (Child) c1;
+		
+		
+		
+		
+		System.out.println();
+		GrandChild c3 = (GrandChild)c2;
+//		
+		System.out.println();
+		c2.test();
+		c2.test2();
+		c2.test3();
+//		Big b = new Big();
+//		b.print();
+//		Big s = new small();
+//		s.print();
+//	
 //	PrintWriter pw = null;
 //	Scanner Scanner = null; 
 //	
